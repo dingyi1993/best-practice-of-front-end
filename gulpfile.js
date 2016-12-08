@@ -1,11 +1,11 @@
 var gulp = require('gulp');
 var del = require('del');
 var browserSync = require('browser-sync').create();
-var runSequence = require('run-sequence').use(gulp);
+var runSequence = require('run-sequence');
 
 var config = require('./config/gulp');
 gulp.task('browser-sync', function() {
-    browserSync.init({
+    return browserSync.init({
         server: {
             baseDir: config.root
         },
@@ -14,12 +14,12 @@ gulp.task('browser-sync', function() {
     })
 });
 gulp.task('clean', function(callback) {
-    del(config.root + '**/*', callback);
+    return del(config.root + '**/*', callback);
 });
 gulp.task('html', function() {
     return gulp.src('src/*.html')
         .pipe(gulp.dest(config.root));
 });
-gulp.task('default', function(callback) {
-    runSequence(['clean', 'html', 'browser-sync'], callback);
+gulp.task('build', function(callback) {
+    runSequence('clean', 'html', 'browser-sync', callback);
 });
