@@ -1,20 +1,22 @@
 {
-  "name": "best-practice",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "browser-sync": "^2.18.2",
-    "del": "^2.2.2",
-    "gulp": "^3.9.1",
-    "gulp-clean-css": "^2.2.0",
-    "gulp-load-plugins": "^1.4.0",
-    "gulp-sass": "^2.3.2",
-    "run-sequence": "^1.2.2"
-  }
+    "name": "best-practice",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "dev": "gulp --env dev",
+        "prod": "gulp --env prod"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "browser-sync": "^2.18.2",
+        "del": "^2.2.2",
+        "gulp": "^3.9.1",
+        "gulp-clean-css": "^2.2.0",
+        "gulp-load-plugins": "^1.4.0",
+        "gulp-sass": "^2.3.2",
+        "run-sequence": "^1.2.2",
+        "yargs": "^6.5.0"
+    }
 }
