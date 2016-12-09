@@ -1,25 +1,12 @@
 var gulp = require('gulp');
-var del = require('del');
-var browserSync = require('browser-sync').create();
-var runSequence = require('run-sequence');
+var plugins = require('gulp-load-plugins')({pattern: ['*']});
 
-var config = require('./config/gulp');
-gulp.task('browser-sync', function() {
-    return browserSync.init({
-        server: {
-            baseDir: config.root
-        },
-        port: 2333,
-        startPath: 'index.html'
-    })
-});
-gulp.task('clean', function(callback) {
-    return del(config.root + '**/*', callback);
-});
-gulp.task('html', function() {
-    return gulp.src('src/*.html')
-        .pipe(gulp.dest(config.root));
-});
-gulp.task('build', function(callback) {
-    runSequence('clean', 'html', 'browser-sync', callback);
+var fs = require('fs');
+var os = require('os');
+console.log(plugins, os.platform());
+
+var config = require('./config');
+
+fs.readdirSync('task/').forEach(function(task) {
+    require('./' + 'task' + '/' + task)(gulp, config, plugins);
 });
