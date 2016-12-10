@@ -1,22 +1,27 @@
 {
-    "name": "best-practice",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-        "dev": "gulp --env dev",
-        "prod": "gulp --env prod"
-    },
-    "author": "",
-    "license": "ISC",
-    "devDependencies": {
-        "browser-sync": "^2.18.2",
-        "del": "^2.2.2",
-        "gulp": "^3.9.1",
-        "gulp-clean-css": "^2.2.0",
-        "gulp-load-plugins": "^1.4.0",
-        "gulp-sass": "^2.3.2",
-        "run-sequence": "^1.2.2",
-        "yargs": "^6.5.0"
-    }
+  "name": "best-practice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "gulp --env dev",
+    "prod": "gulp --env prod"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.18.2",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.2.0",
+    "gulp-if": "^2.0.2",
+    "gulp-load-plugins": "^1.4.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-sass": "^2.3.2",
+    "gulp-sequence": "^0.4.6",
+    "gulp-util": "^3.0.7",
+    "run-sequence": "^1.2.2",
+    "yargs": "^6.5.0"
+  }
 }

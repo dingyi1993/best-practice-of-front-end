@@ -1,17 +1,18 @@
 var gulp = require('gulp');
 var plugins = require('gulp-load-plugins')({pattern: ['*']});
 
+global.plugins = plugins;
+
 var fs = require('fs');
 var os = require('os');
-console.log(plugins, os.platform());
+// console.log(plugins, os.platform());
 
-var config = require('./config');
+var config = require('./gulp/config');
+var common = require('./gulp/util/common');
 
-var args = plugins.yargs.argv;
-var isProduction = function() {
-    return args.env === 'prod';
-};
+global.common = common;
 
-fs.readdirSync('task/').forEach(function(task) {
-    require('./' + 'task' + '/' + task)(gulp, config, plugins);
+var taskPath = 'gulp/task/';
+fs.readdirSync(taskPath).forEach(function(task) {
+    require('./' + taskPath + task)(gulp, config, plugins);
 });
