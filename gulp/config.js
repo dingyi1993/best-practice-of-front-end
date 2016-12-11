@@ -10,11 +10,11 @@ module.exports = {
         all: srcRoot + '**/*',
         path: {
             html: srcRoot + 'html/',
-            sass: srcRoot + 'sass/',
+            sass: srcRoot + 'sass/'
         },
         file: {
             html: srcRoot + '**/*.html',
-            sass: srcRoot + 'sass/**/*.scss',
+            sass: srcRoot + 'sass/**/*.scss'
         }
     },
     // 目标路径相关
@@ -22,7 +22,7 @@ module.exports = {
         root: distRoot,
         all: distRoot + '**/*',
         path: {
-            css: distRoot + 'css/',
+            css: distRoot + 'css/'
         },
         file: {}
     },
