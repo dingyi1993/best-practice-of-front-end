@@ -14,7 +14,8 @@ module.exports = {
         },
         file: {
             html: srcRoot + '**/*.html',
-            sass: srcRoot + 'sass/**/*.scss'
+            sass: srcRoot + 'sass/**/*.scss',
+            js: srcRoot + 'js/**/*.js'
         }
     },
 
