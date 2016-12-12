@@ -17,6 +17,7 @@ module.exports = {
             sass: srcRoot + 'sass/**/*.scss'
         }
     },
+
     // 目标路径相关
     dist: {
         root: distRoot,

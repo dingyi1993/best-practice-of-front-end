@@ -1,4 +1,5 @@
 var common = {};
+
 common.log = function(content) {
     plugins.util.log(plugins.util.colors.green('[INFO]: ' + content));
 }
