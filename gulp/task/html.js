@@ -1,4 +1,4 @@
-module.exports = function(gulp, config, plugins) {
+module.exports = function(gulp, config) {
     gulp.task('html', function() {
         return gulp.src(config.src.file.html)
 

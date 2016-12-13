@@ -15,5 +15,5 @@ global.common = common;
 var taskPath = 'gulp/task/';
 
 fs.readdirSync(taskPath).forEach(function(task) {
-    require('./' + taskPath + task)(gulp, config, plugins);
+    require('./' + taskPath + task)(gulp, config);
 });
