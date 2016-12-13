@@ -1,6 +1,5 @@
 {
     "env": {
-        "browser": true,
         "node": true
     },
     "globals": {
@@ -17,7 +16,7 @@
         "no-extra-parens": ["error", "functions"],
         "no-extra-semi": "error",
         "no-func-assign": "error",
-        "no-inner-declarations": ["error", "both"],
+        "no-inner-declarations": ["off", "both"],
         "no-invalid-regexp": "error",
         "no-irregular-whitespace": "error",
         "no-obj-calls": "error",
@@ -113,6 +112,41 @@
         "new-cap": ["error", { "newIsCap": true }],
         "new-parens": "error",
         "newline-after-var": "error",
+        "no-array-constructor": "error",
+        "no-continue": "off",
+        "no-inline-comments": "off",
+        "no-lonely-if": "off",
+        "no-mixed-spaces-and-tabs": "error",
+        "no-multiple-empty-lines": ["warn", {"max": 3}],
+        "no-negated-condition": "error",
+        "no-nested-ternary": "off",
+        "no-new-object": "error",
+        "no-plusplus": "off",
+        "no-restricted-syntax": "off",
+        "no-spaced-func": "error",
+        "no-ternary": "off",
+        "no-trailing-spaces": "error",
+        "no-underscore-dangle": "off",
+        "no-unneeded-ternary": "warn",
+        "object-curly-spacing": ["error", "never"],
+        "one-var": "off",
+        "operator-assignment": "warn",
+        "operator-linebreak": ["error", "after"],
+        "padded-blocks": "off",
+        "quote-props": ["off", "always"],/*TODO*/
+        "quotes": ["error", "single", { "avoidEscape": true }],
+        "require-jsdoc": "off",
+        "semi-spacing": ["error", {"before": false, "after": true}],
+        "semi": ["error", "always"],
+        "sort-vars": "off",
+        "keyword-spacing": ["error", {"before": true, "after": true}],
+        "space-before-blocks": "error",
+        "space-before-function-paren": ["error", "never"],
+        "space-in-parens": ["error", "never"],
+        "space-infix-ops": "error",
+        "space-unary-ops": ["error", {"words": true, "nonwords": false}],/*TODO*/
+        "spaced-comment": ["warn", "always", { "exceptions": ["-", "+"] }],
+        "wrap-regex": "warn",
 
         /* little */
         "no-control-regex": "error",
@@ -139,6 +173,7 @@
         "no-unused-expressions": "off",
         "radix": "off",
         "no-catch-shadow": "off",
+        "no-bitwise": "off",
 
         /* recommended */
         "no-debugger": "error",
@@ -147,11 +182,9 @@
         "no-duplicate-case": "error",
         "no-empty": "error",
         "no-extra-boolean-cast": "error"
-            /*
-             "quotes": [2, "single"],
-             "semi": [2, "always"],
-             "object-curly-spacing": [2, "never"],
-             "space-infix-ops": 2*/
+
+        /* Strict Mode */
+        /* ECMAScript 2015 */
     },
     "ecmaFeatures": {
         "regexYFlag": true,

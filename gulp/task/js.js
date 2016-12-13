@@ -4,12 +4,7 @@ module.exports = function(gulp, config, plugins) {
 
             .pipe(plugins.eslint())
 
-            .pipe(plugins.eslint.results(function(results){
-                // Called once for all ESLint results.
-                common.log('Total Results: ' + results.length);
-                common.log('Total Warnings: ' + results.warningCount);
-                common.log('Total Errors: ' + results.errorCount);
-            }))
+            .pipe(plugins.eslint.format())
 
             .pipe(gulp.dest(config.dist.root));
 
