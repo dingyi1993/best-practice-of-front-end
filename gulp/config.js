@@ -26,7 +26,13 @@ module.exports = {
         path: {
             css: distRoot + 'css/'
         },
-        file: {}
+        file: {
+            html: srcRoot + '**/*.html'
+        }
+    },
+
+    rev: {
+        revJson: distRoot + 'rev-manifest.json'
     },
 
     // 是否是生产环境

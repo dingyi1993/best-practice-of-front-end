@@ -1,10 +1,12 @@
 var fs = require('fs');
+var rev = require('../util/rev');
 
 module.exports = function(gulp, config) {
     gulp.task('js', function() {
         return gulp.src(config.src.file.js, {base: config.src.root})
 
-            // .pipe(plugins.changed(config.src.file.js, {extension: '.js'}))
+            // .pipe(plugins.changed(config.dist.root, {extension: '.js'}))
+            .pipe(plugins.changedInPlace({firstPass: true}))
 
             .pipe(plugins.debug({title: '编译:'}))
 
@@ -37,7 +39,8 @@ module.exports = function(gulp, config) {
 
             .pipe(plugins.if(config.isProduction, plugins.uglify({mangle: true})))
 
-            .pipe(gulp.dest(config.dist.root));
+            .pipe(plugins.if(config.isProduction, rev(config.dist.root)(), gulp.dest(config.dist.root)));
 
     });
+    gulp.task('js:watch', ['js'], common.reload);
 };
