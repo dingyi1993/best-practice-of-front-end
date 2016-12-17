@@ -24,7 +24,8 @@ module.exports = {
         root: distRoot,
         all: distRoot + '**/*',
         path: {
-            css: distRoot + 'css/'
+            css: distRoot + 'css/',
+            js: distRoot + 'js/'
         },
         file: {
             html: srcRoot + '**/*.html'

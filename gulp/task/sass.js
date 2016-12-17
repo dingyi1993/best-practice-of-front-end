@@ -4,15 +4,16 @@ module.exports = function(gulp, config) {
     gulp.task('sass', function() {
         return gulp.src(config.src.file.sass)
 
-            // .pipe(plugins.plumber({
-            //     errorHandler: function(error) {
-            //         common.error('sass：' + error);
-            //     }
-            // }))
+            .pipe(plugins.cached('sass'))
 
             .pipe(plugins.debug({title: '编译:'}))
 
             .pipe(plugins.sass())
+
+            .on('error', plugins.notify.onError({
+                title: 'compile error',
+                message: '<%= error.message %>'
+            }))
 
             .pipe(plugins.if(config.isProduction, plugins.cleanCss({debug: true}, function(details) {
                 common.log('min css: ' + details.name + ': ' + details.stats.originalSize + ' => ' + details.stats.minifiedSize);
