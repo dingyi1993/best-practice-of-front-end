@@ -23,6 +23,7 @@
     "gulp-htmlmin": "^3.0.0",
     "gulp-if": "^2.0.2",
     "gulp-load-plugins": "^1.4.0",
+    "gulp-mock-server": "^1.1.2",
     "gulp-notify": "^2.2.0",
     "gulp-plumber": "^1.1.0",
     "gulp-rev": "^7.1.2",
@@ -34,5 +35,8 @@
     "lazypipe": "^1.0.1",
     "run-sequence": "^1.2.2",
     "yargs": "^6.5.0"
+  },
+  "dependencies": {
+    "jquery": "^2.2.4"
   }
 }

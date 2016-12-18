@@ -10,12 +10,16 @@ module.exports = {
         all: srcRoot + '**/*',
         path: {
             html: srcRoot + 'html/',
-            sass: srcRoot + 'sass/'
+            sass: srcRoot + 'sass/',
+            images: srcRoot + 'images/',
+            static: srcRoot + 'static/'
         },
         file: {
             html: srcRoot + '**/*.html',
             sass: srcRoot + 'sass/**/*.scss',
-            js: srcRoot + 'js/**/*.js'
+            js: srcRoot + 'js/**/*.js',
+            images: srcRoot + 'images/**/*.{jpg,png,gif}',
+            static: srcRoot + 'static/**/*'
         }
     },
 
