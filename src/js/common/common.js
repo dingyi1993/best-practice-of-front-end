@@ -12,7 +12,7 @@ for (var i = 0; i < b.length; i++) {
 }
 
 $(function() {
-    fetch('http://localhost:2334/getAllFruit')
+    fetch('${rd}/getAllFruit')
         .then(function(response) {
             return response.json();
         })

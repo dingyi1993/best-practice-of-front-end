@@ -1,6 +1,7 @@
 var srcRoot = 'src/';
 var distRoot = 'dist/';
 
+var path = require('path');
 var args = plugins.yargs.argv;
 
 module.exports = {
@@ -32,7 +33,8 @@ module.exports = {
             js: distRoot + 'js/'
         },
         file: {
-            html: srcRoot + '**/*.html'
+            html: distRoot + '**/*.html',
+            css: distRoot + 'css/**/*.css'
         }
     },
 
@@ -41,5 +43,9 @@ module.exports = {
     },
 
     // 是否是生产环境
-    isProduction: args.env === 'prod'
+    isProduction: args.env === 'prod',
+
+    env: args.env ? args.env : 'dev',
+
+    envJson: path.resolve(__dirname, './env.js')
 };

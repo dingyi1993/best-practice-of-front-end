@@ -1,5 +1,6 @@
 var fs = require('fs');
 var rev = require('../util/rev');
+var replace = require('../util/replace');
 
 module.exports = function(gulp, config) {
     gulp.task('js', function() {
@@ -10,6 +11,8 @@ module.exports = function(gulp, config) {
             .pipe(plugins.cached('js'))
 
             .pipe(plugins.debug({title: '编译:'}))
+
+            .pipe(replace())
 
             .pipe(plugins.eslint())
 
@@ -40,11 +43,7 @@ module.exports = function(gulp, config) {
 
             .pipe(plugins.if(config.isProduction, plugins.uglify({mangle: true})))
 
-            .pipe(plugins.if(config.isProduction, rev(config.dist.root)(), gulp.dest(config.dist.root)))
-
-            .pipe(plugins.concat('all.js'))
-
-            .pipe(gulp.dest(config.dist.path.js));
+            .pipe(plugins.if(config.isProduction, rev(config.dist.root)(), gulp.dest(config.dist.root)));
 
     });
     gulp.task('js:watch', ['js'], common.reload);
