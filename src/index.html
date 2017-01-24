@@ -3,11 +3,8 @@
 
 <head>
     <title>666</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="css/common/common.css" rel="stylesheet">
-    <script src="lib/jquery.js"></script>
-    <script src="js/common/common.js"></script>
+    <%- include('./html/_common/header.html'); %>
+    <link href="${fe}/css/common/common.css" rel="stylesheet">
 </head>
 
 <body>
@@ -19,6 +16,7 @@
     <br>
     <img src="images/loading.gif" alt="loading">
     <a href="${fe}${f}${env}rtyrty">777</a>
+    <script data-main="${fe}/js/demo.js" src="${fe}/lib/require.js"></script>
 </body>
 
 </html>

@@ -4,7 +4,7 @@ var replace = require('../util/replace');
 
 module.exports = function(gulp, config) {
     gulp.task('js', function() {
-        return gulp.src(config.src.file.js, {base: config.src.root})
+        return gulp.src([config.src.file.js, '!' + config.src.path.js + '_common/**'], {base: config.src.root})
 
             // .pipe(plugins.changed(config.dist.root, {extension: '.js'}))
             // .pipe(plugins.changedInPlace({firstPass: true}))
@@ -14,11 +14,11 @@ module.exports = function(gulp, config) {
 
             .pipe(replace())
 
-            .pipe(plugins.eslint())
+            .pipe(plugins.if(!config.isProduction, plugins.eslint()))
 
-            .pipe(plugins.eslint.format())
+            .pipe(plugins.if(!config.isProduction, plugins.eslint.format()))
 
-            .pipe(plugins.eslint.results(function(results) {
+            .pipe(plugins.if(!config.isProduction, plugins.eslint.results(function(results) {
                 if (!fs.exists(config.dist.root + 'log/')) {
                     fs.mkdir(config.dist.root + 'log/', function() {});
                 }
@@ -39,7 +39,7 @@ module.exports = function(gulp, config) {
                         throw err;
                     }
                 });
-            }))
+            })))
 
             .pipe(plugins.if(config.isProduction, plugins.uglify({mangle: true})))
 

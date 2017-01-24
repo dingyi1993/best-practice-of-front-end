@@ -12,6 +12,7 @@ module.exports = {
         path: {
             html: srcRoot + 'html/',
             sass: srcRoot + 'sass/',
+            js: srcRoot + 'js/',
             images: srcRoot + 'images/',
             static: srcRoot + 'static/'
         },
