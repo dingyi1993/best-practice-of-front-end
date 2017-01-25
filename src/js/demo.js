@@ -13,7 +13,7 @@ require(['jquery'], function($) {
     }
 
     $(function() {
-        fetch('${rd}/getAllFruit')
+        fetch('${rd}/getAllFruit?_type=noGrape')
             .then(function(response) {
                 return response.json();
             })
