@@ -1,9 +1,8 @@
-module.exports = function(gulp, config) {
+module.exports = function(gulp) {
     gulp.task('mock', function() {
         return gulp.src('.')
             .pipe(plugins.mockServer({
-                host: plugins.ip.address(),
-                port: 2334
+                port: require(config.envJson)('port').rd
             }));
     });
 };

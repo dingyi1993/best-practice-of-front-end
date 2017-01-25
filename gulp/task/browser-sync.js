@@ -1,10 +1,10 @@
-module.exports = function(gulp, config) {
+module.exports = function(gulp) {
     gulp.task('browser-sync', function() {
         return plugins.browserSync.init({
             server: {
                 baseDir: config.dist.root
             },
-            port: 2333,
+            port: require(config.envJson)('port').fe,
             startPath: 'index.html',
             open: false
         });

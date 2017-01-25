@@ -4,7 +4,8 @@
     },
     "globals": {
         "common": true,
-        "plugins": true
+        "plugins": true,
+        "config": true
     },
     /*"extends": "eslint:recommended",*/
     "rules": {

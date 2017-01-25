@@ -1,8 +1,7 @@
 var fs = require('fs');
 var rev = require('../util/rev');
-var replace = require('../util/replace');
 
-module.exports = function(gulp, config) {
+module.exports = function(gulp) {
     gulp.task('js', function() {
         return gulp.src([config.src.file.js, '!' + config.src.path.js + '_common/**'], {base: config.src.root})
 
@@ -10,9 +9,9 @@ module.exports = function(gulp, config) {
             // .pipe(plugins.changedInPlace({firstPass: true}))
             .pipe(plugins.cached('js'))
 
-            .pipe(plugins.debug({title: '编译:'}))
+            .pipe(plugins.debug({title: '[js]编译:'}))
 
-            .pipe(replace())
+            .pipe(plugins.template(require(config.envJson)(), {interpolate: /\${([\s\S]+?)}/g}))
 
             .pipe(plugins.if(!config.isProduction, plugins.eslint()))
 

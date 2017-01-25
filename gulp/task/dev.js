@@ -1,4 +1,4 @@
-module.exports = function(gulp, config) {
+module.exports = function(gulp) {
     gulp.task('dev', function(callback) {
         plugins.runSequence('rebuild', ['browser-sync', 'mock', 'watch'], callback);
     });

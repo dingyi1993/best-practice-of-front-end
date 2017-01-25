@@ -1,10 +1,26 @@
-module.exports = {
-    fe: {
-        dev: 'http://127.0.0.1:2333',
-        prod: 'https://www.fe.com'
+var config = require('./config');
+var port = {
+    fe: 2333,
+    rd: 2334
+};
+var env = {
+    dev: {
+        fe: 'http://www.dev-fe.com:' + port.fe,
+        rd: 'http://www.dev-rd.com:' + port.rd
     },
-    rd: {
-        dev: 'http://127.0.0.1:2334',
-        prod: 'https://www.rd.com'
+    prod: {
+        fe: 'https://www.fe.com',
+        rd: 'https://www.rd.com'
     }
+};
+
+module.exports = function(type) {
+    if (type === 'port') {
+        return port;
+    }
+    var result = env[config.env];
+
+    result.env = config.env;
+
+    return result;
 };

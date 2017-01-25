@@ -1,12 +1,12 @@
 var rev = require('../util/rev');
 
-module.exports = function(gulp, config) {
+module.exports = function(gulp) {
     gulp.task('sass', function() {
         return gulp.src(config.src.file.sass)
 
             .pipe(plugins.cached('sass'))
 
-            .pipe(plugins.debug({title: '编译:'}))
+            .pipe(plugins.debug({title: '[sass]编译:'}))
 
             .pipe(plugins.sass())
 
