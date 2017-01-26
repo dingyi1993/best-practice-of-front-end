@@ -1,6 +1,11 @@
 var rev = require('../util/rev');
 
 module.exports = function(gulp) {
+    var postCssPlugins = [
+        plugins.autoprefixer({browsers: ['last 9 versions'], cascade: false}),
+        plugins.postcssPx2rem({remUnit: 75})
+    ];
+
     gulp.task('sass', function() {
         return gulp.src(config.src.file.sass)
 
@@ -9,6 +14,8 @@ module.exports = function(gulp) {
             .pipe(plugins.debug({title: '[sass]编译:'}))
 
             .pipe(plugins.sass())
+
+            .pipe(plugins.postcss(postCssPlugins))
 
             .on('error', plugins.notify.onError({
                 title: 'compile error',

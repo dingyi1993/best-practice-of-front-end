@@ -1,6 +1,6 @@
 module.exports = function(gulp) {
     gulp.task('static', function() {
-        var jsFilter = plugins.filter(config.src.path.static + 'lib/**/*.js', {restore: true});
+        var jsFilter = plugins.filter([config.src.path.static + 'lib/**/*.js', '!**/*.min.js'], {restore: true});
         var cssFilter = plugins.filter(config.src.path.static + 'css/**/*.css', {restore: true});
 
         return gulp.src(config.src.file.static)

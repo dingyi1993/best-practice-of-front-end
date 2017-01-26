@@ -3,7 +3,7 @@ var rev = require('../util/rev');
 
 module.exports = function(gulp) {
     gulp.task('js', function() {
-        return gulp.src([config.src.file.js, '!' + config.src.path.js + '_common/**'], {base: config.src.root})
+        return gulp.src([config.src.file.js, '!' + config.src.path.js + '_common/**/*'], {base: config.src.root})
 
             // .pipe(plugins.changed(config.dist.root, {extension: '.js'}))
             // .pipe(plugins.changedInPlace({firstPass: true}))

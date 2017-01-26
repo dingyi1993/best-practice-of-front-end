@@ -5,14 +5,18 @@ var port = {
 };
 var env = {
     dev: {
-        fe: 'http://www.dev-fe.com:' + port.fe,
-        rd: 'http://www.dev-rd.com:' + port.rd
+        fe: 'http://127.0.0.1:' + port.fe,
+        rd: 'http://127.0.0.1:' + port.rd
     },
     prod: {
         fe: 'https://www.fe.com',
         rd: 'https://www.rd.com'
     }
 };
+
+for (var url in env.dev) {
+    env.dev[url] = env.dev[url].replace(/127\.0\.0\.1/, plugins.ip.address());
+}
 
 module.exports = function(type) {
     if (type === 'port') {

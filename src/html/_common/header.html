@@ -1,4 +1,10 @@
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<title><%= title %></title>
+
+<% if (env !== 'prod') { %>
+<script src="${fe}/lib/vconsole.min.js"></script>
+<% } %>
+<script src="${fe}/lib/flexible.js"></script>
 <link href="${fe}/css/normalize.css" rel="stylesheet">
+<link href="${fe}/css/common/common.css" rel="stylesheet">
 <script src="./js/_common/require_config.js" inline></script>
