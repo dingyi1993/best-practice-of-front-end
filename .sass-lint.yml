@@ -1,0 +1,13 @@
+rules:
+  no-css-comments: 0
+  no-color-literals: 0
+  property-sort-order:
+    - 1
+    - order: 'smacss'
+  clean-import-paths:
+    - 1
+    - leading-underscore: true
+  force-attribute-nesting: 0
+  quotes:
+    - 1
+    - style: double

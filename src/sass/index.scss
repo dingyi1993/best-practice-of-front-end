@@ -1,21 +1,24 @@
 .container {
-    // background-image: url(../../images/site_bg.jpg);
-    background-color: #e50;
-    color: #555;
-    height: 80px;/*px*/
-    line-height: 80px;/*px*/
-    font-size: 32px;/*px*/
+  // background-image: url("../../images/site_bg.jpg");
+  height: 80px;/*px*/
+  background-color: #e50;
+  color: #555;
+  font-size: 32px;/*px*/
+  line-height: 80px;/*px*/
 }
+
 img {
-    width: 750px;
-    border: 1px solid blue;/*no*/
+  width: 750px;
+  border: 1px solid #00f;/*no*/
 }
+
 span {
-    font-size: 32px;/*px*/
+  font-size: 32px;/*px*/
 }
+
 .cycle {
-    height: 40px;/*px*/
-    width: 40px;/*px*/
-    border-radius: 100%;
-    background-color: #ccc;
+  width: 40px;/*px*/
+  height: 40px;/*px*/
+  border-radius: 100%;
+  background-color: #ccc;
 }
